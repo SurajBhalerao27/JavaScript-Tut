@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind keyword ex.</title>
+</head>
+
+<body>
+    <button>Click Me</button>
+</body>
+<script>
+    class React {
+        constructor() {
+            this.library = "react"
+            this.server = "127.0.0.1:8080"
+
+            // Bind 'this' to the handleClick method to maintain the correct context when the event listener is triggered
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this));
+
+        }
+
+        // handleClick method logs a message and the current context (this) when the button is clicked
+        handleClick() {
+            console.log("Button clicked");
+            console.log(this);
+        }
+    }
+
+    // Instantiate a new React object
+    const app = new React();
+</script>
+</script>
+
+</html>
